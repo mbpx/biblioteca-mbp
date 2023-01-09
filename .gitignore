@@ -1,6 +1,7 @@
-/examples
-/src/environments
 .firebase
+.vscode
+/src/environments
+/examples
 
 # Compiled output
 /dist
