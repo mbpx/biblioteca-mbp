@@ -18,7 +18,7 @@ import { User } from 'src/app/core/services/auth/user.model';
 })
 export class AuthService {
 
-  user$: Observable<any>;
+  user$: Observable<User>;
 
   constructor(
     private afAuth: AngularFireAuth,

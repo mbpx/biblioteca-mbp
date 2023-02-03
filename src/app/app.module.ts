@@ -7,15 +7,15 @@ import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { CatalogoComponent } from './modules/catalogo/catalogo.component';
+import { CatalogoComponent } from './modules/biblioteca/catalogo/catalogo.component';
 import { LoginModule } from './modules/login/login.module';
-import { RouterModule } from '@angular/router';
-import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
+import { SidebarComponent } from './core/components/sidebar/sidebar.component';
+import { BibliotecaComponent } from './modules/biblioteca/biblioteca/biblioteca.component';
+import { BibliotecaModule } from './modules/biblioteca/biblioteca.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogoComponent,
     SidebarComponent
   ],
   imports: [
@@ -24,7 +24,8 @@ import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
 
-    LoginModule
+    LoginModule,
+    BibliotecaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
