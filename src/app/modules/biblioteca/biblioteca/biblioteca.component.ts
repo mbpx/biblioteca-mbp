@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
 import { Libro } from 'src/app/core/models/libro.model';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { ContextService } from 'src/app/core/services/context/context.service';
@@ -17,6 +19,8 @@ export class BibliotecaComponent implements OnInit {
     private auth: AuthService,
     private contextService: ContextService,
     private libroService: LibrosService,
+    private notiferService: NotifierService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,5 +37,14 @@ export class BibliotecaComponent implements OnInit {
   openLibro(libro: Libro) {
     return;
   }
+
+  crearLibro() {
+    this.router.navigate(['/nuevo-libro']);
+  }
+
+  crear() {
+    this.notiferService.notify('success', 'Libro creado');
+  }
+
 
 }

@@ -3,7 +3,7 @@ export class Biblioteca {
     nombre: string;
     propietario: string;
     descripcion: string;
-    publica: boolean;
+    public: boolean;
 
     constructor() { }
 }

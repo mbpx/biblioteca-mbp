@@ -1,0 +1,57 @@
+<ng-template #matchingBooksDialog let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Hemos encontrado estos libros...</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body row row-cols-3">
+        <div class="col" *ngFor="let libro of matchingBooksDialogContent">
+            <app-miniatura-libro [googleBook]="libro"></app-miniatura-libro>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    </div>
+</ng-template>
+
+<div class="container">
+    <div class="row p-3 g-3">
+        <form class="col col-lg-5" [formGroup]="formCrearLibro">
+            <div class="mb-3">
+                <label for="exampleInputTitulo" class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="exampleInputTitulo" formControlName="titulo">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputAutor" class="form-label">Autor</label>
+                <input type="text" class="form-control" id="exampleInputAutor" formControlName="autor">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEditorial" class="form-label">Editorial</label>
+                <input type="text" class="form-control" id="exampleInputEditorial" formControlName="editorial">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputColeccion" class="form-label">Coleccion</label>
+                <input type="text" class="form-control" id="exampleInputColeccion" formControlName="coleccion">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputYear" class="form-label">Año</label>
+                <input type="year" class="form-control" id="exampleInputYear" formControlName="year">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputIsbn" class="form-label">ISBN</label>
+                <input type="text" class="form-control" id="exampleInputIsbn" formControlName="isbn">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputSignatura" class="form-label">Signatura</label>
+                <input type="text" class="form-control" id="exampleInputSignatura" formControlName="signatura">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="public">
+                <label class="form-check-label" for="exampleCheck1">Publico</label>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="buscarGoogleBooks()">Buscar</button>
+            <button type="submit" class="btn btn-primary" (click)="crearLibro()">Crear</button>
+        </form>
+    </div>
+</div>

@@ -1,32 +1,39 @@
 <div class="container">
-    <div class="row row-cols-1 g-3">
-        <div class="col">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Autor</th>
-                        <th scope="col">Editorial</th>
-                        <th scope="col">Año</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let libro of libros">
-                        <td>{{libro.titulo}}</td>
-                        <td>{{libro.autor}}</td>
-                        <td>{{libro.editorial}}</td>
-                        <td>{{libro.year}}</td>
-                        <td>
-                            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="openLibro(libro)">View</button>
-                        </td>
-
-                    </tr>
-                </tbody>
-            </table>
+    <div class="d-flex justify-content-between p-3">
+        <div>
+            <h1>Libros</h1>
+        </div>
+        <div>
+            <button type="button" class="btn btn-sm btn-outline-secondary bi bi-plus-lg" (click)="crearLibro()"> Nuevo</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary bi bi-plus-lg" (click)="crear()"> </button>
 
         </div>
+    </div>
 
+    <div class="row g-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Editorial</th>
+                    <th scope="col">Año</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let libro of libros">
+                    <td>{{libro.titulo}}</td>
+                    <td>{{libro.autor}}</td>
+                    <td>{{libro.editorial}}</td>
+                    <td>{{libro.year}}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="openLibro(libro)">View</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>

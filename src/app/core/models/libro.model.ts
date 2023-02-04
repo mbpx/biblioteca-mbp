@@ -4,7 +4,10 @@ export class Libro {
     autor: string;
     titulo: string;
     editorial: string;
-    edicion: string;
+    coleccion: string;
     year: string;
+    isbn: string;
     public: boolean;
+    googleBookId: string;
+    imagen: string;
 }
